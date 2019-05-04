@@ -1,0 +1,87 @@
+
+--- CLASSES ---
+*These are for MODIFIERS and SKILL SAVING THROWS, NOT skill points!
+
+-> BARBARIAN:
+	+2 Proficiency Bonus
+	! Strength
+	! Constitution
+	- PICK 2 -
+	Animal Handling, Athletics, Intimidation, Nature, Perception, Survival
+	
+-> BARD:
+	+2 Proficiency Bonus
+	! Dexterity
+	! Charisma
+	- PICK ANY 3 -
+	Acrobatics, Animal Handling, Arcana, Athletics, Deception, History, Insight, Intimidation, Investigation, Medicine, Nature, Perception, Performance, Persuasion, Religion, Sleight of Hand, Stealth, Survival
+	
+-> CLERIC:
+	+2 Proficiency Bonus
+	! Wisdom
+	! Charisma
+	- PICK 2 -
+	History, Insight, Medicine, Persuasion, Religion
+	
+-> DRUID:
+	+2 Proficiency Bonus
+	! Intelligence
+	! Wisdom
+	- PICK 2 -
+	Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, Survival
+	
+-> FIGHTER:
+	+2 Proficiency Bonus
+	! Strength
+	! Constitution
+	- PICK 2 -
+	Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, Survival
+
+-> MONK:
+	+2 Proficiency Bonus
+	! Strength
+	! Dexterity
+	- PICK 2 -
+	Acrobatics, Athletics, History, Insight, Religion, Stealth
+	
+-> PALADIN:
+	+2 Proficiency Bonus
+	! Wisdom
+	! Charisma
+	- PICK 2 -
+	Athletics, Insight, Intimidation, Medicine, Persuasion, Religion
+	
+-> RANGER:
+	+2 Proficiency Bonus
+	! Strength
+	! Dexterity
+	- PICK 3 -
+	Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, Survival
+	
+-> ROGUE:
+	+2 Proficiency Bonus
+	! Dexterity
+	! Intelligence
+	- PICK 4 -
+	Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, Stealth
+	
+-> SORCERER:
+	+2 Proficiency Bonus
+	! Constitution
+	! Charisma
+	- PICK 2 -
+	Arcana, Deception, Insight, Intimidation, Persuasion, Religion
+	
+-> WARLOCK:
+	+2 Proficiency Bonus
+	! Wisdom
+	! Charisma
+	- PICK 2 - 
+	Arcana, Deception, History, Intimidation, Investigation, Nature, Religion
+	
+-> WIZARD:
+	+2 Proficiency Bonus
+	! Intelligence
+	! Wisdom
+	- PICK 2 -
+	Arcana, History, Insight, Investigation, Medicine, Religion

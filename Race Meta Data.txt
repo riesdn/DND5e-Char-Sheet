@@ -1,0 +1,40 @@
+
+--- RACES ---
+*These are base skill points increases, NOT modifiers or saving throws!
+
+-> DRAGONBORN:
+	+2 Strength
+	+1 Charisma
+
+-> DWARF:
+	+2 Constitution
+
+-> ELF:
+	+2 Dexterity
+
+-> GNOME:
+	+2 Intelligence
+
+-> HALF-ELF:
+	+2 Charisma
+	+1 Dexterity
+	+1 Wisdom
+	
+-> HALFLING:
+	+2 Dexterity
+	
+-> HALF-ORC:
+	+2 Strength
+	+1 Constitution
+	
+-> HUMAN:
+	+1 Strength
+	+1 Dexterity
+	+1 Constitution
+	+1 Intelligence
+	+1 Wisdom
+	+1 Charisma
+	
+-> TIEFLING:
+	+2 Charisma
+	+1 Intelligence
