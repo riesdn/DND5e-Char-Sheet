@@ -1,6 +1,17 @@
 
 --- CLASSES ---
-*These are for MODIFIERS and SKILL SAVING THROWS, NOT skill points!
+* These are for MODIFIERS and SKILL SAVING THROWS, NOT skill points!
+* Proficiency bonuses go to BASE STAT SAVING THROWS (marked with !) and to  a certain 
+  number of specific skills listed. The appropriate skill checkboxes will become available 
+  to the user for selection, and marked skills will change the appropriate modifiers. When
+  the specified amount of skills are marked, the rest of the checkboxes will be disabled again.
+
+(
+  As of May 2019, Base Stat Saving Throws are not reflected in this webapp. 
+  I'm currently thinking of different ways to include it without cluttering 
+  everything too much. It is kept in the meta data so I don't have to hunt
+  down this information again should I figure out the best way to include it.
+)
 
 -> BARBARIAN:
 	+2 Proficiency Bonus
@@ -14,7 +25,9 @@
 	! Dexterity
 	! Charisma
 	- PICK ANY 3 -
-	Acrobatics, Animal Handling, Arcana, Athletics, Deception, History, Insight, Intimidation, Investigation, Medicine, Nature, Perception, Performance, Persuasion, Religion, Sleight of Hand, Stealth, Survival
+	Acrobatics, Animal Handling, Arcana, Athletics, Deception, History, 
+	Insight, Intimidation, Investigation, Medicine, Nature, Perception, 
+	Performance, Persuasion, Religion, Sleight of Hand, Stealth, Survival
 	
 -> CLERIC:
 	+2 Proficiency Bonus
@@ -28,14 +41,16 @@
 	! Intelligence
 	! Wisdom
 	- PICK 2 -
-	Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, Survival
+	Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, 
+	Survival
 	
 -> FIGHTER:
 	+2 Proficiency Bonus
 	! Strength
 	! Constitution
 	- PICK 2 -
-	Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, Survival
+	Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, 
+	Perception, Survival
 
 -> MONK:
 	+2 Proficiency Bonus
@@ -56,14 +71,16 @@
 	! Strength
 	! Dexterity
 	- PICK 3 -
-	Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, Survival
+	Animal Handling, Athletics, Insight, Investigation, Nature, Perception, 
+	Stealth, Survival
 	
 -> ROGUE:
 	+2 Proficiency Bonus
 	! Dexterity
 	! Intelligence
 	- PICK 4 -
-	Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, Stealth
+	Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, 
+	Perception, Performance, Persuasion, Sleight of Hand, Stealth
 	
 -> SORCERER:
 	+2 Proficiency Bonus

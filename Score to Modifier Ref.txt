@@ -1,0 +1,49 @@
+
+ Score 	Modifier
+  1 	    −5
+  2–3 	  −4
+  4–5 	  −3
+  6–7 	  −2
+  8–9 	  −1
+  10–11 	+0
+  12–13 	+1
+  14–15 	+2
+  16–17 	+3
+  18–19 	+4
+  20–21 	+5
+  
+  To determine an ability modifier without consulting the table, subtract 10 from the ability score and then divide the result by 2 (round down).
+  
+  EXAMPLE MATH:
+  
+  Score: 1              1 - 10 = -9
+  Modifier: -5          -9 / 2 = -4.5 rounds down to -5
+  
+  
+  CODING LOGIC:
+  
+  var y = points
+  var x = modifier
+  var z = final modifier after rounding
+  var r = remainder
+  
+  CASE 1:
+  y = 1;                 y = 1;
+  x = (y - 10) / 2;      r = (y - 10) % 2;
+  return x;              return r;
+  // x = -4.5            // r = 1
+  
+  CASE 2:
+  y = 2;                 y = 2;
+  x = (y - 10) / 2;      r = (y - 10) % 2;
+  return x;              return r;
+  // x = -4              // r = 0
+  
+  if (r = 1) {
+    z = x - 0.5;
+    // case 1: z = -5
+  }
+  else if (r = 0) {
+    z = x;
+    // case 2: z = -4 
+  }
