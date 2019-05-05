@@ -13,7 +13,10 @@
 </head>
 <body>
 <div id="container">
-	<form>
+	<form autocomplete="off"> 
+  <!-- autocomplete="off" as a workaround for Firefox, which retains text input on refresh; 
+       I want it to reset to the textbox defaults on refresh like it does with (ie:) the meter 
+       defaults and in other browsers such as Chrome. -->
 	<div class="meta">
 		<p>
 			<label>Name: </label>
@@ -66,56 +69,56 @@
 		</tr>
 		<tr>
 			<td>Strength:</td>
-			<td><button type="button">-</button></td>
-			<td><meter id="" value="10" min="0" max="20"></meter></td>
-			<td><button type="button">+</button></td>
-			<td><input type="text" size="5" value="" readonly></td>
-			<td><input type="text" size="5" value="0" readonly></td>
+			<td><button class="statBtn" type="button">-</button></td>
+			<td><meter id="statsBar" value="10" min="0" max="20"></meter></td>
+			<td><button class="statBtn" type="button">+</button></td>
+			<td><input id="statsPts" type="text" size="5" value="10" readonly></td>
+			<td><input id="statsMod" type="text" size="5" value="0" readonly></td>
 		</tr>
 		<tr>
 			<td>Dexterity:</td>
-			<td><button type="button">-</button></td>
-			<td><meter id="" value="10" min="0" max="20"></meter></td>
-			<td><button type="button">+</button></td>
-			<td><input type="text" size="5" value="" readonly></td>
-			<td><input type="text" size="5" value="0" readonly></td>
+			<td><button class="statBtn" type="button">-</button></td>
+			<td><meter id="statsBar" value="10" min="0" max="20"></meter></td>
+			<td><button class="statBtn" type="button">+</button></td>
+			<td><input id="statsPts" type="text" size="5" value="10" readonly></td>
+			<td><input id="statsMod" type="text" size="5" value="0" readonly></td>
 		</tr>
 		<tr>
 			<td>Constitution:</td>
-			<td><button type="button">-</button></td>
-			<td><meter id="" value="10" min="0" max="20"></meter></td>
-			<td><button type="button">+</button></td>
-			<td><input type="text" size="5" value="" readonly></td>
-			<td><input type="text" size="5" value="0" readonly></td>
+			<td><button class="statBtn" type="button">-</button></td>
+			<td><meter id="statsBar" value="10" min="0" max="20"></meter></td>
+			<td><button class="statBtn" type="button">+</button></td>
+			<td><input id="statsPts" type="text" size="5" value="10" readonly></td>
+			<td><input id="statsMod" type="text" size="5" value="0" readonly></td>
 		</tr>
 		<tr>
 			<td>Intelligence:</td>
-			<td><button type="button">-</button></td>
-			<td><meter id="" value="10" min="0" max="20"></meter></td>
-			<td><button type="button">+</button></td>
-			<td><input type="text" size="5" value="" readonly></td>
-			<td><input type="text" size="5" value="0" readonly></td>
+			<td><button class="statBtn" type="button">-</button></td>
+			<td><meter id="statsBar" value="10" min="0" max="20"></meter></td>
+			<td><button class="statBtn" type="button">+</button></td>
+			<td><input id="statsPts" type="text" size="5" value="10" readonly></td>
+			<td><input id="statsMod" type="text" size="5" value="0" readonly></td>
 		</tr>
 		<tr>
 			<td>Wisdom:</td>
-			<td><button type="button">-</button></td>
-			<td><meter id="" value="10" min="0" max="20"></meter></td>
-			<td><button type="button">+</button></td>
-			<td><input type="text" size="5" value="" readonly></td>
-			<td><input type="text" size="5" value="0" readonly></td>
+			<td><button class="statBtn" type="button">-</button></td>
+			<td><meter id="statsBar" value="10" min="0" max="20"></meter></td>
+			<td><button class="statBtn" type="button">+</button></td>
+			<td><input id="statsPts" type="text" size="5" value="10" readonly></td>
+			<td><input id="statsMod" type="text" size="5" value="0" readonly></td>
 		</tr>
 		<tr>
 			<td>Charisma:</td>
-			<td><button type="button">-</button></td>
-			<td><meter id="" value="10" min="0" max="20"></meter></td>
-			<td><button type="button">+</button></td>
-			<td><input type="text" size="5" value="" readonly></td>
-			<td><input type="text" size="5" value="0" readonly></td>
+			<td><button class="statBtn" type="button">-</button></td>
+			<td><meter id="statsBar" value="10" min="0" max="20"></meter></td>
+			<td><button class="statBtn" type="button">+</button></td>
+			<td><input id="statsPts" type="text" size="5" value="10" readonly></td>
+			<td><input id="statsMod" type="text" size="5" value="0" readonly></td>
 		</tr>
 		<tr>
 			<td colspan="2">Points Left:</td>
-			<td><meter id="availablePts" value="50" min="0" max="100"></meter></td>
-			<td colspan="2"><input id="avPtsText" type="text" size="5" value="60/60" readonly></td>
+			<td><meter id="availablePts" value="15" min="0" max="75"></meter></td>
+			<td colspan="2"><input id="avPtsText" type="text" size="5" value="15/75" readonly></td>
 		</tr>
 	</table> <!-- END .stats -->
 	<table class="skills">
