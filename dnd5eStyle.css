@@ -17,10 +17,18 @@ p {
 }
 
 table {
-	margin: 25px auto;
+	margin: 10px auto;
+}
+
+.check {
+  text-align: center;
 }
 
 #maxProf {
   text-align: center;
-  border: 2px solid pink;
+  padding: 5px;
+  min-width: 500px;
+  max-width: 50%;
+  margin: auto;
+  background-color: #ccdeb4;
 }
