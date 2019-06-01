@@ -126,6 +126,9 @@
 			<td colspan="2"><input id="avPtsText" type="text" size="5" value="15/75" readonly></td>
 		</tr>
 	</table> <!-- END #stats -->
+  <div id="maxProf">
+    Select <span id="maxNumProf"></span> skills to be proficient in.
+  </div>
 	<table id="skills">
 		<tr>
 			<th>MOD</th>
@@ -138,101 +141,94 @@
 			<th>STAT</th>
 		</tr>
 		<tr>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox"  name="proficiency" value="acrobatics" disabled></td>
+			<td><input class="skillModDex" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input class="column2" type="checkbox"  name="proficiency" value="acrobatics" disabled></td>
 			<td>Acrobatics</td>
 			<td>(Dex)</td>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox"  name="proficiency" value="animalHandling" disabled></td>
+			<td><input class="skillModWis" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input type="checkbox"  name="proficiency" value="animalHandling" disabled></td>
 			<td>Animal Handling</td>
 			<td>(Wis)</td>
 		</tr>
 		<tr>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox"  name="proficiency" value="arcana" disabled></td>
+			<td><input class="skillModInt" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input class="column2" type="checkbox"  name="proficiency" value="arcana" disabled></td>
 			<td>Arcana</td>
 			<td>(Int)</td>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox"  name="proficiency" value="athletics" disabled></td>
+			<td><input class="skillModStr" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input type="checkbox"  name="proficiency" value="athletics" disabled></td>
 			<td>Athletics</td>
 			<td>(Str)</td>
 		</tr>
 		<tr>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox"  name="proficiency" value="deception" disabled></td>
+			<td><input class="skillModCha" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input class="column2" type="checkbox"  name="proficiency" value="deception" disabled></td>
 			<td>Deception</td>
 			<td>(Cha)</td>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox"  name="proficiency" value="history" disabled></td>
+			<td><input class="skillModInt" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input type="checkbox"  name="proficiency" value="history" disabled></td>
 			<td>History</td>
 			<td>(Int)</td>
 		</tr>
 		<tr>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox"  name="proficiency" value="insight" disabled></td>
+			<td><input class="skillModWis" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input class="column2" type="checkbox"  name="proficiency" value="insight" disabled></td>
 			<td>Insight</td>
 			<td>(Wis)</td>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox" name="proficiency" value="intimidation" disabled></td>
+			<td><input class="skillModCha" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input type="checkbox" name="proficiency" value="intimidation" disabled></td>
 			<td>Intimidation</td>
 			<td>(Cha)</td>
 		</tr>
 		<tr>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox" name="proficiency" value="investigation" disabled></td>
+			<td><input class="skillModInt" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input class="column2" type="checkbox" name="proficiency" value="investigation" disabled></td>
 			<td>Investigation</td>
 			<td>(Int)</td>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox" name="proficiency" value="medicine" disabled></td>
+			<td><input class="skillModWis" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input type="checkbox" name="proficiency" value="medicine" disabled></td>
 			<td>Medicine</td>
 			<td>(Wis)</td>
 		</tr>
 		<tr>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox" name="proficiency" value="nature" disabled></td>
+			<td><input class="skillModInt" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input class="column2" type="checkbox" name="proficiency" value="nature" disabled></td>
 			<td>Nature</td>
 			<td>(Int)</td>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox" name="proficiency" value="perception" disabled></td>
+			<td><input class="skillModWis" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input type="checkbox" name="proficiency" value="perception" disabled></td>
 			<td>Perception</td>
 			<td>(Wis)</td>
 		</tr>
 		<tr>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox" name="proficiency" value="performance" disabled></td>
+			<td><input class="skillModCha" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input class="column2" type="checkbox" name="proficiency" value="performance" disabled></td>
 			<td>Performance</td>
 			<td>(Cha)</td>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox" name="proficiency" value="persuasion" disabled></td>
+			<td><input class="skillModCha" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input type="checkbox" name="proficiency" value="persuasion" disabled></td>
 			<td>Persuasion</td>
 			<td>(Cha)</td>
 		</tr>
 		<tr>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox" name="proficiency" value="religion" disabled></td>
+			<td><input class="skillModInt" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input class="column2" type="checkbox" name="proficiency" value="religion" disabled></td>
 			<td>Religion</td>
 			<td>(Int)</td>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox" name="proficiency" value="sleightOfHand" disabled></td>
+			<td><input class="skillModDex" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input type="checkbox" name="proficiency" value="sleightOfHand" disabled></td>
 			<td>Sleight of Hand</td>
 			<td>(Dex)</td>
 		</tr>
 		<tr>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox" name="proficiency" value="stealth" disabled></td>
+			<td><input class="skillModDex" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input class="column2" type="checkbox" name="proficiency" value="stealth" disabled></td>
 			<td>Stealth</td>
 			<td>(Dex)</td>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox" name="proficiency" value="survival" disabled></td>
+			<td><input class="skillModWis" type="text" size="5" value="0" readonly></td>
+			<td class="check"><input type="checkbox" name="proficiency" value="survival" disabled></td>
 			<td>Survival</td>
 			<td>(Wis)</td>
-		</tr>
-		<tr>
-			<td><input class="skillMod" type="text" size="5" value="0" readonly></td>
-			<td><input type="checkbox" name="proficiency" value="passivePerception" disabled></td>
-			<td>Passive Perception</td>
-			<td>(Wis)</td>
-      <td colspan="4" id="maxProf">Select <span id="maxNumProf"></span> skills to be proficient in.</td>
 		</tr>
 	</table> <!-- END #skills -->
 	</form>
