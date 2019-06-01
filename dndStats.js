@@ -29,8 +29,26 @@ function findMod() {
       modifier = "+" + modifier;
     } // else modifier is unchanged
     
+    // update base stat mod
     $(this).find(".statsMod").val(modifier);
-  });
+  
+    // auto-populate skill mods with base stat mod data
+    if (i === 0) {
+      $(".skillModStr").val(modifier);
+    } else if (i === 1) {
+      $(".skillModDex").val(modifier);
+    } else if (i === 2) {
+      // do nothing, constitution does not effect specific skills in DND5e
+    } else if (i === 3) {
+      $(".skillModInt").val(modifier);
+    } else if (i === 4) {
+      $(".skillModWis").val(modifier);
+    } else if (i === 5) {
+      $(".skillModCha").val(modifier);
+    } 
+  
+  }); // end $(".trStats").each()
+  
   
 } // END findMod()
 
@@ -76,45 +94,46 @@ function editBonus(charRace) {
   // clear all fields first, so if a race is previously selected its bonus goes away on selection of a different race
   $(".bonusPts").val(0);
   
-  if (charRace === "noneRace") {
-    $(".bonusPts").val(0);
-    
-  } else if (charRace === "dragon") {
-    $("#strength .bonusPts").val(2);
-    $("#charisma .bonusPts").val(1);
-    
-  } else if (charRace === "dwarf") {
-    $("#constitution .bonusPts").val(2);
-    
-  } else if (charRace === "elf") {
-    $("#dexterity .bonusPts").val(2);
-    
-  } else if (charRace === "gnome") {
-    $("#intelligence .bonusPts").val(2);
-    
-  } else if (charRace === "notHobbit") {
-    $("#dexterity .bonusPts").val(2);
-    
-  } else if (charRace === "halfElf") {
-    $("#charisma .bonusPts").val(2);
-    $("#dexterity .bonusPts").val(1);
-    $("#wisdom .bonusPts").val(1);
-    
-  } else if (charRace === "halfOrc") {
-    $("#strength .bonusPts").val(2);
-    $("#constitution .bonusPts").val(1);
-    
-  } else if (charRace === "human") {
-    $("#strength .bonusPts").val(1);
-    $("#dexterity .bonusPts").val(1);
-    $("#constitution .bonusPts").val(1);
-    $("#intelligence .bonusPts").val(1);
-    $("#wisdom .bonusPts").val(1);
-    $("#charisma .bonusPts").val(1);
-    
-  } else if (charRace === "tiefling") {
-    $("#charisma .bonusPts").val(2);
-    $("#intelligence .bonusPts").val(1);
+  switch (charRace) {
+    default:
+      $(".bonusPts").val(0);
+      break;
+    case "dragon":
+      $("#strength .bonusPts").val(2);
+      $("#charisma .bonusPts").val(1);
+      break;
+    case "dwarf":
+      $("#constitution .bonusPts").val(2);
+      break;
+    case "elf":
+      $("#dexterity .bonusPts").val(2);
+      break;
+    case "gnome":
+      $("#intelligence .bonusPts").val(2);
+      break;
+    case "notHobbit":
+      $("#dexterity .bonusPts").val(2);
+      break;
+    case "halfElf":
+      $("#charisma .bonusPts").val(2);
+      $("#dexterity .bonusPts").val(1);
+      $("#wisdom .bonusPts").val(1);
+      break;
+    case "halfOrc":
+      $("#strength .bonusPts").val(2);
+      $("#constitution .bonusPts").val(1);
+      break;
+    case "human":
+      $("#strength .bonusPts").val(1);
+      $("#dexterity .bonusPts").val(1);
+      $("#constitution .bonusPts").val(1);
+      $("#intelligence .bonusPts").val(1);
+      $("#wisdom .bonusPts").val(1);
+      $("#charisma .bonusPts").val(1);
+      break;
+    case "tiefling":
+      $("#charisma .bonusPts").val(2);
+      $("#intelligence .bonusPts").val(1);
   }
   
   // update modifiers
@@ -141,139 +160,192 @@ function editProficiency(charClass) {
   // stuff for specific classes:
   // 1: max amount of skills user is able to select to be proficient in
   // 2: enable checkboxes for appropriate skills per class (referenced from Class Meta Data.txt)
-  if (charClass === "barbarian") {
-    $("#maxNumProf").text(2);
-    $("[value=\"animalHandling\"]").prop("disabled", false);
-    $("[value=\"athletics\"]").prop("disabled", false);
-    $("[value=\"intimidation\"]").prop("disabled", false);
-    $("[value=\"nature\"]").prop("disabled", false);
-    $("[value=\"perception\"]").prop("disabled", false);
-    $("[value=\"survival\"]").prop("disabled", false);
+  switch (charClass) {
+    default: // default do nothing
+      break;
+    case "barbarian":
+      $("#maxNumProf").text(2);
+      $("[value=\"animalHandling\"]").prop("disabled", false);
+      $("[value=\"athletics\"]").prop("disabled", false);
+      $("[value=\"intimidation\"]").prop("disabled", false);
+      $("[value=\"nature\"]").prop("disabled", false);
+      $("[value=\"perception\"]").prop("disabled", false);
+      $("[value=\"survival\"]").prop("disabled", false);
+      break;
+    case "bard":
+      $("#maxNumProf").text(3);
+      $("[value=\"acrobatics\"]").prop("disabled", false);
+      $("[value=\"animalHandling\"]").prop("disabled", false);
+      $("[value=\"arcana\"]").prop("disabled", false);
+      $("[value=\"athletics\"]").prop("disabled", false);
+      $("[value=\"deception\"]").prop("disabled", false);
+      $("[value=\"history\"]").prop("disabled", false);
+      $("[value=\"insight\"]").prop("disabled", false);
+      $("[value=\"intimidation\"]").prop("disabled", false);
+      $("[value=\"investigation\"]").prop("disabled", false);
+      $("[value=\"medicine\"]").prop("disabled", false);
+      $("[value=\"nature\"]").prop("disabled", false);
+      $("[value=\"perception\"]").prop("disabled", false);
+      $("[value=\"performance\"]").prop("disabled", false);
+      $("[value=\"persuasion\"]").prop("disabled", false);
+      $("[value=\"religion\"]").prop("disabled", false);
+      $("[value=\"sleightOfHand\"]").prop("disabled", false);
+      $("[value=\"stealth\"]").prop("disabled", false);
+      $("[value=\"survival\"]").prop("disabled", false);
+      break;
+    case "cleric":
+      $("#maxNumProf").text(2);
+      $("[value=\"history\"]").prop("disabled", false);
+      $("[value=\"insight\"]").prop("disabled", false);
+      $("[value=\"medicine\"]").prop("disabled", false);
+      $("[value=\"persuasion\"]").prop("disabled", false);
+      $("[value=\"religion\"]").prop("disabled", false);
+      break;
+    case "druid":
+      $("#maxNumProf").text(2);
+      $("[value=\"arcana\"]").prop("disabled", false);
+      $("[value=\"animalHandling\"]").prop("disabled", false);
+      $("[value=\"insight\"]").prop("disabled", false);
+      $("[value=\"medicine\"]").prop("disabled", false);
+      $("[value=\"nature\"]").prop("disabled", false);
+      $("[value=\"perception\"]").prop("disabled", false);
+      $("[value=\"religion\"]").prop("disabled", false);
+      $("[value=\"survival\"]").prop("disabled", false);
+      break;
+    case "fighter":
+      $("#maxNumProf").text(2);
+      $("[value=\"acrobatics\"]").prop("disabled", false);
+      $("[value=\"animalHandling\"]").prop("disabled", false);
+      $("[value=\"athletics\"]").prop("disabled", false);
+      $("[value=\"history\"]").prop("disabled", false);
+      $("[value=\"insight\"]").prop("disabled", false);
+      $("[value=\"intimidation\"]").prop("disabled", false);
+      $("[value=\"perception\"]").prop("disabled", false);
+      $("[value=\"survival\"]").prop("disabled", false);
+      break;
+    case "monk":
+      $("#maxNumProf").text(2);
+      $("[value=\"acrobatics\"]").prop("disabled", false);
+      $("[value=\"athletics\"]").prop("disabled", false);
+      $("[value=\"history\"]").prop("disabled", false);
+      $("[value=\"insight\"]").prop("disabled", false);
+      $("[value=\"religion\"]").prop("disabled", false);
+      $("[value=\"stealth\"]").prop("disabled", false);
+      break;
+    case "paladin":
+      $("#maxNumProf").text(2);
+      $("[value=\"athletics\"]").prop("disabled", false);
+      $("[value=\"insight\"]").prop("disabled", false);
+      $("[value=\"intimidation\"]").prop("disabled", false);
+      $("[value=\"medicine\"]").prop("disabled", false);
+      $("[value=\"persuasion\"]").prop("disabled", false);
+      $("[value=\"religion\"]").prop("disabled", false);
+      break;
+    case "ranger":
+      $("#maxNumProf").text(3);
+      $("[value=\"animalHandling\"]").prop("disabled", false);
+      $("[value=\"athletics\"]").prop("disabled", false);
+      $("[value=\"insight\"]").prop("disabled", false);
+      $("[value=\"investigation\"]").prop("disabled", false);
+      $("[value=\"nature\"]").prop("disabled", false);
+      $("[value=\"perception\"]").prop("disabled", false);
+      $("[value=\"stealth\"]").prop("disabled", false);
+      $("[value=\"survival\"]").prop("disabled", false);
+      break;
+    case "rogue":
+      $("#maxNumProf").text(4);
+      $("[value=\"acrobatics\"]").prop("disabled", false);
+      $("[value=\"athletics\"]").prop("disabled", false);
+      $("[value=\"deception\"]").prop("disabled", false);
+      $("[value=\"insight\"]").prop("disabled", false);
+      $("[value=\"intimidation\"]").prop("disabled", false);
+      $("[value=\"investigation\"]").prop("disabled", false);
+      $("[value=\"perception\"]").prop("disabled", false);
+      $("[value=\"performance\"]").prop("disabled", false);
+      $("[value=\"persuasion\"]").prop("disabled", false);
+      $("[value=\"sleightOfHand\"]").prop("disabled", false);
+      $("[value=\"stealth\"]").prop("disabled", false);
+      break;
+    case "sorcerer":
+      $("#maxNumProf").text(2);
+      $("[value=\"arcana\"]").prop("disabled", false);
+      $("[value=\"deception\"]").prop("disabled", false);
+      $("[value=\"insight\"]").prop("disabled", false);
+      $("[value=\"intimidation\"]").prop("disabled", false);
+      $("[value=\"persuasion\"]").prop("disabled", false);
+      $("[value=\"religion\"]").prop("disabled", false);
+      break;
+    case "warlock":
+      $("#maxNumProf").text(2);
+      $("[value=\"arcana\"]").prop("disabled", false);
+      $("[value=\"deception\"]").prop("disabled", false);
+      $("[value=\"history\"]").prop("disabled", false);
+      $("[value=\"intimidation\"]").prop("disabled", false);
+      $("[value=\"investigation\"]").prop("disabled", false);
+      $("[value=\"nature\"]").prop("disabled", false);
+      $("[value=\"religion\"]").prop("disabled", false);
+      break;
+    case "wizard":
+      $("#maxNumProf").text(2);
+      $("[value=\"arcana\"]").prop("disabled", false);
+      $("[value=\"history\"]").prop("disabled", false);
+      $("[value=\"insight\"]").prop("disabled", false);
+      $("[value=\"investigation\"]").prop("disabled", false);
+      $("[value=\"medicine\"]").prop("disabled", false);
+      $("[value=\"religion\"]").prop("disabled", false);
+  }
+  
+  // if a checkbox is enabled, highlight it so the user can see it better
+  $(":checkbox").each(function(){
+    // first clear out old colors if any exist
+    $(this).parent().css("background-color", "#fff");
     
-  } else if (charClass === "bard") {
-    $("#maxNumProf").text(3);
-    $("[value=\"acrobatics\"]").prop("disabled", false);
-    $("[value=\"animalHandling\"]").prop("disabled", false);
-    $("[value=\"arcana\"]").prop("disabled", false);
-    $("[value=\"athletics\"]").prop("disabled", false);
-    $("[value=\"deception\"]").prop("disabled", false);
-    $("[value=\"history\"]").prop("disabled", false);
-    $("[value=\"insight\"]").prop("disabled", false);
-    $("[value=\"intimidation\"]").prop("disabled", false);
-    $("[value=\"investigation\"]").prop("disabled", false);
-    $("[value=\"medicine\"]").prop("disabled", false);
-    $("[value=\"nature\"]").prop("disabled", false);
-    $("[value=\"perception\"]").prop("disabled", false);
-    $("[value=\"performance\"]").prop("disabled", false);
-    $("[value=\"persuasion\"]").prop("disabled", false);
-    $("[value=\"religion\"]").prop("disabled", false);
-    $("[value=\"sleightOfHand\"]").prop("disabled", false);
-    $("[value=\"stealth\"]").prop("disabled", false);
-    $("[value=\"survival\"]").prop("disabled", false);
-    
-  } else if (charClass === "cleric") {
-    $("#maxNumProf").text(2);
-    $("[value=\"history\"]").prop("disabled", false);
-    $("[value=\"insight\"]").prop("disabled", false);
-    $("[value=\"medicine\"]").prop("disabled", false);
-    $("[value=\"persuasion\"]").prop("disabled", false);
-    $("[value=\"religion\"]").prop("disabled", false);
-    
-  } else if (charClass === "druid") {
-    $("#maxNumProf").text(2);
-    $("[value=\"arcana\"]").prop("disabled", false);
-    $("[value=\"animalHandling\"]").prop("disabled", false);
-    $("[value=\"insight\"]").prop("disabled", false);
-    $("[value=\"medicine\"]").prop("disabled", false);
-    $("[value=\"nature\"]").prop("disabled", false);
-    $("[value=\"perception\"]").prop("disabled", false);
-    $("[value=\"religion\"]").prop("disabled", false);
-    $("[value=\"survival\"]").prop("disabled", false);
-    
-  } else if (charClass === "fighter") {
-    $("#maxNumProf").text(2);
-    $("[value=\"acrobatics\"]").prop("disabled", false);
-    $("[value=\"animalHandling\"]").prop("disabled", false);
-    $("[value=\"athletics\"]").prop("disabled", false);
-    $("[value=\"history\"]").prop("disabled", false);
-    $("[value=\"insight\"]").prop("disabled", false);
-    $("[value=\"intimidation\"]").prop("disabled", false);
-    $("[value=\"perception\"]").prop("disabled", false);
-    $("[value=\"survival\"]").prop("disabled", false);
-    
-  } else if (charClass === "monk") {
-    $("#maxNumProf").text(2);
-    $("[value=\"acrobatics\"]").prop("disabled", false);
-    $("[value=\"athletics\"]").prop("disabled", false);
-    $("[value=\"history\"]").prop("disabled", false);
-    $("[value=\"insight\"]").prop("disabled", false);
-    $("[value=\"religion\"]").prop("disabled", false);
-    $("[value=\"stealth\"]").prop("disabled", false);
-    
-  } else if (charClass === "paladin") {
-    $("#maxNumProf").text(2);
-    $("[value=\"athletics\"]").prop("disabled", false);
-    $("[value=\"insight\"]").prop("disabled", false);
-    $("[value=\"intimidation\"]").prop("disabled", false);
-    $("[value=\"medicine\"]").prop("disabled", false);
-    $("[value=\"persuasion\"]").prop("disabled", false);
-    $("[value=\"religion\"]").prop("disabled", false);
-    
-  } else if (charClass === "ranger") {
-    $("#maxNumProf").text(3);
-    $("[value=\"animalHandling\"]").prop("disabled", false);
-    $("[value=\"athletics\"]").prop("disabled", false);
-    $("[value=\"insight\"]").prop("disabled", false);
-    $("[value=\"investigation\"]").prop("disabled", false);
-    $("[value=\"nature\"]").prop("disabled", false);
-    $("[value=\"perception\"]").prop("disabled", false);
-    $("[value=\"stealth\"]").prop("disabled", false);
-    $("[value=\"survival\"]").prop("disabled", false);
-    
-  } else if (charClass === "rogue") {
-    $("#maxNumProf").text(4);
-    $("[value=\"acrobatics\"]").prop("disabled", false);
-    $("[value=\"athletics\"]").prop("disabled", false);
-    $("[value=\"deception\"]").prop("disabled", false);
-    $("[value=\"insight\"]").prop("disabled", false);
-    $("[value=\"intimidation\"]").prop("disabled", false);
-    $("[value=\"investigation\"]").prop("disabled", false);
-    $("[value=\"perception\"]").prop("disabled", false);
-    $("[value=\"performance\"]").prop("disabled", false);
-    $("[value=\"persuasion\"]").prop("disabled", false);
-    $("[value=\"sleightOfHand\"]").prop("disabled", false);
-    $("[value=\"stealth\"]").prop("disabled", false);
-    
-  } else if (charClass === "sorcerer") {
-    $("#maxNumProf").text(2);
-    $("[value=\"arcana\"]").prop("disabled", false);
-    $("[value=\"deception\"]").prop("disabled", false);
-    $("[value=\"insight\"]").prop("disabled", false);
-    $("[value=\"intimidation\"]").prop("disabled", false);
-    $("[value=\"persuasion\"]").prop("disabled", false);
-    $("[value=\"religion\"]").prop("disabled", false);
-    
-  } else if (charClass === "warlock") {
-    $("#maxNumProf").text(2);
-    $("[value=\"arcana\"]").prop("disabled", false);
-    $("[value=\"deception\"]").prop("disabled", false);
-    $("[value=\"history\"]").prop("disabled", false);
-    $("[value=\"intimidation\"]").prop("disabled", false);
-    $("[value=\"investigation\"]").prop("disabled", false);
-    $("[value=\"nature\"]").prop("disabled", false);
-    $("[value=\"religion\"]").prop("disabled", false);
-    
-  } else if (charClass === "wizard") {
-    $("#maxNumProf").text(2);
-    $("[value=\"arcana\"]").prop("disabled", false);
-    $("[value=\"history\"]").prop("disabled", false);
-    $("[value=\"insight\"]").prop("disabled", false);
-    $("[value=\"investigation\"]").prop("disabled", false);
-    $("[value=\"medicine\"]").prop("disabled", false);
-    $("[value=\"religion\"]").prop("disabled", false);
-  } // else nothing
+    // if NOT disabled
+    if (!$(this).prop("disabled")) {
+      $(this).parent().css("background-color", "#ccdeb4");
+    }
+  });
   
 } // END editProficiency()
+
+function isChecked(skillModCheckBox, profBonus) {
+  
+  console.log("checkbox clicked. isChecked() activated.");
+  
+  var maxProf, numChecked, currentMod, modTextBox;
+  var i = 0;
+  
+  // how many boxes can be checked at once?
+  maxProf = Number($("#maxNumProf").text());
+  console.log("maxProf = " + maxProf);
+  
+  // how many boxes are checked so far?
+  numChecked = $(":checkbox:checked").length;
+  console.log("numChecked = " + numChecked);
+  
+  // grab the correct mod text box 
+  if (skillModCheckBox.hasClass("column2")) {
+    console.log("this.hasClass('column2') TRUE");
+    modTextBox = skillModCheckBox.closest("tr").find(":text").first();
+  } else {
+    console.log("this.hasClass('column2') FALSE");
+    modTextBox = skillModCheckBox.closest("tr").find(":text").last();
+  }
+  
+  // grab current modifier
+  currentMod = Number(modTextBox.val());  
+  
+  // only add profBonus if numChecked is less than maxProf!
+  if (numChecked > maxProf) {
+    alert("Please select only " + maxProf + " skills.");
+    skillModCheckBox.prop("checked", false);
+  } else if (numChecked <= maxProf && skillModCheckBox.prop("checked")) {
+    modTextBox.val(currentMod + profBonus);
+  } else {
+    modTextBox.val(currentMod - profBonus);
+  }
+  
+} // END isChecked()
 
 $(document).ready(function(){
   
@@ -290,19 +362,13 @@ $(document).ready(function(){
 		editPoints($(this), $("#availablePts").val());
 	});
   $(":checkbox").click(function() {
-    // function to check how many checkboxes can be checked at once and if the user has checked the max amount or not
-    // also add proficiency bonus to checked skill modifiers
+    isChecked($(this), Number($("#profBonus").val()));
   });
 	
 }); // END $(document).ready
 
 /* 
   FEATURES TO ADD:
-  - BASE STATS points change automatically effects all skill modifiers as 
-      well and autopopulates in each skill's modifiers text box
-  - CLASS selection changes skill modifiers and if a skill is marked with 
-      proficiency or not (Seperate from base mods from base stats / in 
-      addition to mods from base stats)
   - DOWNLOAD TO PDF
     > currently (May 2019) user has nothing to do with this information 
       other than copy it down by hand
