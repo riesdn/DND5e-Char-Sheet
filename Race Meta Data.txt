@@ -1,9 +1,6 @@
 
 --- RACES ---
-*These are base skill points increases, NOT modifiers or saving throws! 
-They will add on to the base skill points total without regard to the total 
-amount of points available to the user. As of May 2019, it is uncertain whether
-these points will be indicated with a seperate meter color or not.
+*These are base skill points increases, NOT modifiers or saving throws! They will add on to the base skill points total without regard to the total amount of points available to the user. As of May 2019, it is uncertain whether these points will be indicated with a seperate meter color or not.
 
 -> DRAGONBORN:
 	+2 Strength
@@ -17,14 +14,14 @@ these points will be indicated with a seperate meter color or not.
 
 -> GNOME:
 	+2 Intelligence
-
+	
+-> HALFLING:
+	+2 Dexterity
+  
 -> HALF-ELF:
 	+2 Charisma
 	+1 Dexterity
 	+1 Wisdom
-	
--> HALFLING:
-	+2 Dexterity
 	
 -> HALF-ORC:
 	+2 Strength
