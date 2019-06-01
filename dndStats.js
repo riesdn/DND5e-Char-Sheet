@@ -312,7 +312,7 @@ function isChecked(skillModCheckBox, profBonus) {
   
   console.log("checkbox clicked. isChecked() activated.");
   
-  var maxProf, numChecked, currentMod, modTextBox;
+  var maxProf, numChecked, currentMod, modNew, modTextBox;
   var i = 0;
   
   // how many boxes can be checked at once?
@@ -340,9 +340,19 @@ function isChecked(skillModCheckBox, profBonus) {
     alert("Please select only " + maxProf + " skills.");
     skillModCheckBox.prop("checked", false);
   } else if (numChecked <= maxProf && skillModCheckBox.prop("checked")) {
-    modTextBox.val(currentMod + profBonus);
+    modNew = currentMod + profBonus;
+    // formatting conditional to show positive number symbol, bc users will ADD their modifier to their dice roll
+    if (modNew > 0) {
+      modNew = "+" + modNew;
+    }
+    modTextBox.val(modNew);
   } else {
-    modTextBox.val(currentMod - profBonus);
+    modNew = currentMod - profBonus;
+    // formatting conditional to show positive number symbol, bc users will ADD their modifier to their dice roll
+    if (modNew > 0) {
+      modNew = "+" + modNew;
+    }
+    modTextBox.val(modNew);
   }
   
 } // END isChecked()
