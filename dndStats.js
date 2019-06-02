@@ -150,6 +150,7 @@ function editProficiency(charClass) {
   $(":checkbox").prop("checked", false);
   $(":checkbox").prop("disabled", true);
   $("#maxProf").hide();
+	findMod();
   
   // stuff for any class
   if (charClass != "noneClass") {
